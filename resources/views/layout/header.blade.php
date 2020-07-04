@@ -24,7 +24,7 @@
 
 
   <div class="container" id="app">
-      <nav-component></nav-component>
+  <nav-component :url={{json_encode(url('/'))}}></nav-component>
   @yield('content')
 
   </div>

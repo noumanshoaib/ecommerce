@@ -11,17 +11,17 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="/">Home
+            <a class="nav-link" :href="this.url">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
 
           <li v-show="!isToken" class="nav-item">
 
-          <a  class="nav-link" href="/register">register</a>
+          <a  class="nav-link" :href="this.url+'/register'">register</a>
           </li>
           <li v-if="!isToken" class="nav-item">
-            <a class="nav-link" href="/login">login</a>
+            <a class="nav-link" :href="this.url+'/login'">login</a>
           </li>
           <li v-else class="nav-item">
            <a class="nav-link" v-on:click='logout' href="#">log out</a>
@@ -35,6 +35,7 @@
 
 <script>
 export default {
+    props: ['url'],
     data() {
         return {
             isToken: true,

@@ -2041,6 +2041,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['url'],
   data: function data() {
     return {
       isToken: true
@@ -41408,7 +41409,18 @@ var render = function() {
           },
           [
             _c("ul", { staticClass: "navbar-nav ml-auto" }, [
-              _vm._m(1),
+              _c("li", { staticClass: "nav-item active" }, [
+                _c(
+                  "a",
+                  { staticClass: "nav-link", attrs: { href: this.url } },
+                  [
+                    _vm._v("Home\n              "),
+                    _c("span", { staticClass: "sr-only" }, [
+                      _vm._v("(current)")
+                    ])
+                  ]
+                )
+              ]),
               _vm._v(" "),
               _c(
                 "li",
@@ -41426,7 +41438,10 @@ var render = function() {
                 [
                   _c(
                     "a",
-                    { staticClass: "nav-link", attrs: { href: "/register" } },
+                    {
+                      staticClass: "nav-link",
+                      attrs: { href: this.url + "/register" }
+                    },
                     [_vm._v("register")]
                   )
                 ]
@@ -41436,7 +41451,10 @@ var render = function() {
                 ? _c("li", { staticClass: "nav-item" }, [
                     _c(
                       "a",
-                      { staticClass: "nav-link", attrs: { href: "/login" } },
+                      {
+                        staticClass: "nav-link",
+                        attrs: { href: this.url + "/login" }
+                      },
                       [_vm._v("login")]
                     )
                   ])
@@ -41478,17 +41496,6 @@ var staticRenderFns = [
       },
       [_c("span", { staticClass: "navbar-toggler-icon" })]
     )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", { staticClass: "nav-item active" }, [
-      _c("a", { staticClass: "nav-link", attrs: { href: "/" } }, [
-        _vm._v("Home\n              "),
-        _c("span", { staticClass: "sr-only" }, [_vm._v("(current)")])
-      ])
-    ])
   }
 ]
 render._withStripped = true
