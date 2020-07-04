@@ -2143,7 +2143,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      products: [{
+      products: [],
+      modelProduct: [{
         id: '',
         name: '',
         photo: '',
@@ -2162,6 +2163,7 @@ __webpack_require__.r(__webpack_exports__);
       return response.json();
     }).then(function (data) {
       _this.products = data.data;
+      _this.modelProduct = data.data;
     });
   },
   methods: {
@@ -41602,7 +41604,8 @@ var render = function() {
                           staticClass: "card-img-top",
                           attrs: {
                             src:
-                              "images/" + _vm.products[_vm.displayIndex].photo,
+                              "images/" +
+                              _vm.modelProduct[_vm.displayIndex].photo,
                             alt: ""
                           }
                         })
@@ -41611,20 +41614,24 @@ var render = function() {
                       _c("div", { staticClass: "card-body" }, [
                         _c("h4", { staticClass: "card-title" }, [
                           _c("a", { attrs: { href: "#" } }, [
-                            _vm._v(_vm._s(_vm.products[_vm.displayIndex].name))
+                            _vm._v(
+                              _vm._s(_vm.modelProduct[_vm.displayIndex].name)
+                            )
                           ])
                         ]),
                         _vm._v(" "),
                         _c("h5", [
                           _vm._v(
                             "AED " +
-                              _vm._s(_vm.products[_vm.displayIndex].price)
+                              _vm._s(_vm.modelProduct[_vm.displayIndex].price)
                           )
                         ]),
                         _vm._v(" "),
                         _c("p", { staticClass: "card-text" }, [
                           _vm._v(
-                            _vm._s(_vm.products[_vm.displayIndex].description)
+                            _vm._s(
+                              _vm.modelProduct[_vm.displayIndex].description
+                            )
                           )
                         ])
                       ])

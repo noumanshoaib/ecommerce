@@ -35,13 +35,13 @@
 
 <div class="">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top" :src="'images/'+products[displayIndex].photo" alt=""></a>
+              <a href="#"><img class="card-img-top" :src="'images/'+modelProduct[displayIndex].photo" alt=""></a>
               <div  class="card-body">
                 <h4 class="card-title">
-                  <a  href="#">{{products[displayIndex].name}}</a>
+                  <a  href="#">{{modelProduct[displayIndex].name}}</a>
                 </h4>
-                <h5>AED {{products[displayIndex].price}}</h5>
-                <p class="card-text">{{products[displayIndex].description}}</p>
+                <h5>AED {{modelProduct[displayIndex].price}}</h5>
+                <p class="card-text">{{modelProduct[displayIndex].description}}</p>
               </div>
 
             </div>
@@ -71,11 +71,13 @@ export default {
     data() {
         return {
            products: [
-             { id: '',
-              name: '',
-              photo: '',
-              description: '',
-             },
+           ],
+           modelProduct: [
+                { id: '',
+                name: '',
+                photo: '',
+                description: '',
+                },
            ],
            displayIndex: 0,
         }
@@ -90,6 +92,7 @@ const requestOptions = {
                 .then(response => response.json())
                 .then(data => {
                     this.products = data.data;
+                    this.modelProduct = data.data;
 
                 });
     },
